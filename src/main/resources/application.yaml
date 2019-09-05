@@ -2,7 +2,7 @@ spring:
   application:
     name: static-proxy
   resources:
-    static-locations: file:${PROXY_PATH:/home/html}
+    static-locations: file:${PROXY_PATH:/www/html}
 
 server:
   port: 777
