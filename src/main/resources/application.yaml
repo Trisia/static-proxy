@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: static-proxy
+  resources:
+    static-locations: file:${PROXY_PATH:/home/html}
+
+server:
+  port: 777
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: ${REGISTER_SERVER_URL:http://172.22.203.11:8761/eureka/}
